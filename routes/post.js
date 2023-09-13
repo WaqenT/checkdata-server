@@ -31,13 +31,13 @@ router.post('/', async (req, res) => {
 		if (typeof value === 'string') {
 			dataType = value.length > 20 ? 'text' : 'varchar';
 		} else if (typeof value === 'number') {
-			if (Number.isInteger(value)) {
+			if (Number.isSafeInteger(value)) {
 				if (value >= -32768 && value <= 32767) {
 					dataType = 'smallint';
 				} else if (value >= -2147483648 && value <= 2147483647) {
 					dataType = 'integer';
 				} else {
-					dataType = 'decimal';
+					dataType = 'bigint';
 				}
 			} else {
 				dataType = 'decimal';
