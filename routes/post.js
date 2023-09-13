@@ -39,10 +39,10 @@ router.post('/', async (req, res) => {
 				} else if (value >= -9223372036854775808 && value <= 9223372036854775807) {
 					dataType = 'bigint';
 				} else {
-					dataType = 'numeric';
+					dataType = 'decimal';
 				}
 			} else {
-				dataType = 'numeric';
+				dataType = 'decimal';
 			}
 		} else if (typeof value === 'boolean') {
 			dataType = 'boolean';
