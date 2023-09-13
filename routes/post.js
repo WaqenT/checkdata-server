@@ -36,8 +36,6 @@ router.post('/', async (req, res) => {
 					dataType = 'smallint';
 				} else if (value >= -2147483648 && value <= 2147483647) {
 					dataType = 'integer';
-				} else if (value >= -9223372036854775808 && value <= 9223372036854775807) {
-					dataType = 'bigint';
 				} else {
 					dataType = 'decimal';
 				}
